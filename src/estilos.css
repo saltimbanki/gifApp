@@ -49,6 +49,7 @@ h3 {
   
   overflow: hidden;
   margin: 0;
+  cursor: pointer;
 }
 
 .card *{
