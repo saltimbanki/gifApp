@@ -1,4 +1,30 @@
+import { useState } from "react";
+import { GifGrid, AddCategory } from "./componentes";
+
+const apiKey = "A23fV2UXIXBsfk98nEVLNaWHvyZ062gT";
+
 export const GifApp = () => {
-    return <div>Gif App</div>;
-    
+  const [categorias, setCategorias] = useState(["songoku"]);
+
+  const onAddCategory = (newCategory) => {
+    if (categorias.includes(newCategory)) return; //evitar duplicados
+    setCategorias([newCategory, ...categorias]);
+  };
+
+  return (
+    <>
+      <h1>Gif App</h1>
+      <AddCategory
+        onNewCategory={(event) => {
+          onAddCategory(event);
+        }}
+      />
+
+      <ol>
+        {categorias.map((categoria) => {
+          return <GifGrid key={categoria} category={categoria} />;
+        })}
+      </ol>
+    </>
+  );
 };
