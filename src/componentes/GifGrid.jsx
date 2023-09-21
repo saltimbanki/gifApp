@@ -9,7 +9,7 @@ export const GifGrid = ({ category }) => {
 
   return (
     <>
-      <h1>{category}</h1>
+      <h1 className="center">{category}</h1>
       {isLoading && <h2>Cargandillo.....</h2>}
       {isLoading ? (
         <h2>Cargando...</h2>
