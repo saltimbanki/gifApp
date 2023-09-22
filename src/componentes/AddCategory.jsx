@@ -20,13 +20,27 @@ export const AddCategory = ({ onNewCategory }) => {
   };
 
   return (
-    <form action="" onSubmit={onSubmit}>
-      <input
+    <form action="" onSubmit={onSubmit} className="form__group field">
+      {/* <input
         type="text"
         placeholder="Buscar gifs"
         value={inputValue}
         onChange={onInputChange}
+      /> */}
+
+      <input
+        type="text"
+        className="form__field"
+        placeholder="Buscar Gifs"
+        name="name"
+        id="name"
+        required
+        value={inputValue}
+        onChange={onInputChange}
       />
+      {/* <label for="name" className="form__label">
+        Buscar
+      </label> */}
     </form>
   );
 };

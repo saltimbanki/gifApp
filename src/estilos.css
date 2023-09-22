@@ -1,41 +1,53 @@
 * {
   font-family: Helvetica, Arial, sans-serif;
   background-color: rgb(234, 234, 234);
-  margin:0px;
+  margin: 0px;
   padding: 0px;
 }
-root{
+
+#root {
   max-width: 100vw;
   max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
-.gifgrid-container{
-  display:grid;
+.root-header {
+  display: flex;
+  /* padding: 1rem; */
+  /* justify-content: space-between; */
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 55%;
+  box-shadow: 1px 20px 20px -16px rgb(234, 234, 234);
+}
+
+.root-content {
+  max-height: 100vh;
+  min-height: 100vh;
+  height: 100vh;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  
+}
+
+.gifgrid-container {
+  display: grid;
   grid-template-columns: 3fr 2fr;
   outline: 1px solid pink;
-  height: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+
 }
 
-input {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(97, 32, 158);
-  color: black;
-  font-size: 1.2rem;
-  outline: none;
-  padding: 10px 15px;
-  width: 100%;
-}
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 3rem;
-  margin-bottom: 5px;
-}
-
-.gifgrid-container__category{
+.gifgrid-container__category {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,18 +56,30 @@ h3 {
   font-weight: 800;
   text-align: center;
   font-size: 4rem;
-  
 }
 
-.gifgrid-container__preview{
+.gifgrid-container__preview {
   background-color: black;
 }
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
 .card-grid {
-  columns:4;
+  columns: 4;
   column-gap: 1em;
-  margin:0;
+  margin: 0;
   padding: 1em;
-  width:calc(100vw-1em);
+  width: calc(100vw-1em);
 }
 
 .card {
@@ -64,21 +88,20 @@ h3 {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.03);
-  
+
   overflow: hidden;
   margin: 0;
   cursor: pointer;
 }
 
-.card *{
-  margin:0px;
-
+.card * {
+  margin: 0px;
 }
 
 .card figcaption {
   display: none;
-  position:relative;
-  bottom: 0px; 
+  position: relative;
+  bottom: 0px;
   background-color: white;
   flex: 1;
   font-size: 1rem;
@@ -90,18 +113,70 @@ h3 {
 .card img {
   width: 100%;
   max-width: 100%;
-  display:block;
-  
-
+  display: block;
 }
 
 .card {
   margin-bottom: 1em;
-
 }
 
-.header{
-  display: flex;
-  padding: 1rem;
-  justify-content: space-between;
+/* css para el input */
+.form__group {
+  /* position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%; */
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #262626;
+  padding: 7px 8px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  /* color: transparent; */
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
 }
