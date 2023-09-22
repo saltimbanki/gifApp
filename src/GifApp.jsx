@@ -13,12 +13,14 @@ export const GifApp = () => {
 
   return (
     <>
-      <h1>Gif App</h1>
-      <AddCategory
-        onNewCategory={(event) => {
-          onAddCategory(event);
-        }}
-      />
+      <div className="header">
+        <h1>Gif App</h1>
+        <AddCategory
+          onNewCategory={(event) => {
+            onAddCategory(event);
+          }}
+        />
+      </div>
 
       <ol>
         {categorias.map((categoria) => {

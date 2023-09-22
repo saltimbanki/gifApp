@@ -4,7 +4,17 @@
   margin:0px;
   padding: 0px;
 }
+root{
+  max-width: 100vw;
+  max-height: 100vh;
+}
 
+.gifgrid-container{
+  display:grid;
+  grid-template-columns: 3fr 2fr;
+  outline: 1px solid pink;
+  height: 100%;
+}
 
 input {
   background-color: white;
@@ -25,13 +35,21 @@ h3 {
   margin-bottom: 5px;
 }
 
-.center{
-  display:flex;
+.gifgrid-container__category{
+  display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  font-size: 4rem;
   
 }
 
+.gifgrid-container__preview{
+  background-color: black;
+}
 .card-grid {
   columns:4;
   column-gap: 1em;
@@ -80,4 +98,10 @@ h3 {
 .card {
   margin-bottom: 1em;
 
+}
+
+.header{
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
 }
