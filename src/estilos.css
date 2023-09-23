@@ -3,6 +3,7 @@
   background-color: rgb(234, 234, 234);
   margin: 0px;
   padding: 0px;
+  color: #262626;
 }
 
 #root {
@@ -26,6 +27,7 @@
   padding: 1rem;
   width: 55%;
   box-shadow: 1px 20px 20px -16px rgb(234, 234, 234);
+  
 }
 
 .root-content {
@@ -64,6 +66,7 @@
 
 h1 {
   font-weight: 800;
+  
 }
 
 h2 {
