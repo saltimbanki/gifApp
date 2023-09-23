@@ -9,7 +9,7 @@ export const GifGrid = ({ category }) => {
 
   return (
     <>
-      <div className="gifgrid-container">
+      <div className="gifgrid-container" id={`cat-${category}`}>
         <h1 className="gifgrid-container__category">{category}</h1>
         {isLoading && <h2>Cargandillo.....</h2>}
         {isLoading ? (

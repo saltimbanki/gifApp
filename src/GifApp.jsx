@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GifGrid, AddCategory } from "./componentes";
+import { SideBar } from "./componentes/Sidebar";
 
 const apiKey = "A23fV2UXIXBsfk98nEVLNaWHvyZ062gT";
 
@@ -32,6 +33,8 @@ export const GifApp = () => {
           return <GifGrid key={categoria} category={categoria} />;
         })}
       </ol>
+
+      <SideBar categorias={categorias} />
     </>
   );
 };
