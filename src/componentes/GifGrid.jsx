@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getGifs } from "../helpers/getGifs";
 import { GifGridItem } from "./GifGridItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
+import { motion } from "framer-motion";
 
 export const GifGrid = ({ category }) => {
   const { images, isLoading } = useFetchGifs(category);
@@ -10,7 +11,15 @@ export const GifGrid = ({ category }) => {
   return (
     <>
       <div className="gifgrid-container" id={`cat-${category}`}>
-        <h1 className="gifgrid-container__category">{category}</h1>
+        <h1 className="gifgrid-container__category">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {category}
+          </motion.div>
+        </h1>
         {isLoading && <h2>Cargandillo.....</h2>}
         {isLoading ? (
           <h2>Cargando...</h2>
