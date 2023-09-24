@@ -1,8 +1,17 @@
-export const GifGridItem = ({ title, url, id }) => {
+import { motion } from "framer-motion";
+
+export const GifGridItem = ({ title, url, id, indice }) => {
+  const random = Math.random() * (10 - 1) + 1;
   return (
-    <figure className="card">
-      <img src={url} alt="" />
+    <motion.figure
+      className="card"
+      initial={{ opacity: 0.5, y: 0 }}
+      whileInView={{ opacity: 1, y: 10 }}
+      transition={{ duration: random * 0.05, delay: random * 0.05 }}
+    >
+      <motion.img src={url} alt="" />
+
       <figcaption>{title}</figcaption>
-    </figure>
+    </motion.figure>
   );
 };
