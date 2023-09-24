@@ -51,6 +51,7 @@
 
 .gifgrid-container__category {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -226,3 +227,8 @@ h3 {
   margin-left: 0rem;
 }
 
+.button-play{
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1rem;
+}

@@ -19,7 +19,10 @@ export const GifGrid = ({ category }) => {
           >
             {category}
           </motion.div>
+
+          <motion.button className="button-play">Play</motion.button>
         </h1>
+
         {isLoading && <h2>Cargandillo.....</h2>}
         {isLoading ? (
           <h2>Cargando...</h2>
