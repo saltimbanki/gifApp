@@ -63,6 +63,7 @@
 
 .gifgrid-container__preview {
   background-color: black;
+  transform: perspective(336px) translateZ(-20px) rotatey(-35deg) rotatex(14deg) scale(0.9)
 }
 
 h1 {

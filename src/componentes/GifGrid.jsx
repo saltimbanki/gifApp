@@ -7,12 +7,20 @@ import { motion } from "framer-motion";
 export const GifGrid = ({ category }) => {
   const { images, isLoading } = useFetchGifs(category);
   console.log(isLoading);
+  const [play, setPlay] = useState(false);
+
+  const height = play ? "10vh" : "100vh";
 
   return (
     <>
       <div className="gifgrid-container" id={`cat-${category}`}>
-        <h1 className="gifgrid-container__category">
+        <motion.h1
+          layout
+          animate={{ height: height }}
+          className="gifgrid-container__category"
+        >
           <motion.div
+            layout
             initial={{ y: -50, marginTop: "-100px" }}
             whileInView={{ y: 0, opacity: 1, marginTop: "0px" }}
             transition={{ duration: 0.5 }}
@@ -20,8 +28,15 @@ export const GifGrid = ({ category }) => {
             {category}
           </motion.div>
 
-          <motion.button className="button-play">Play</motion.button>
-        </h1>
+          <motion.button
+            className="button-play"
+            onClick={() => {
+              setPlay(!play);
+            }}
+          >
+            Play
+          </motion.button>
+        </motion.h1>
 
         {isLoading && <h2>Cargandillo.....</h2>}
         {isLoading ? (
