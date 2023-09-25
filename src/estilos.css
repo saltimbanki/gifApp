@@ -17,6 +17,7 @@
   flex-direction: column;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  
 }
 
 .root-header {
@@ -40,6 +41,7 @@
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  overflow-x: hidden;
   
 }
 

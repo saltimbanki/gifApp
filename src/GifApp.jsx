@@ -5,13 +5,13 @@ import { scrollTo } from "./helpers/scrollTo";
 
 const apiKey = "A23fV2UXIXBsfk98nEVLNaWHvyZ062gT";
 
+const fakeCategorias = ["songoku", "arcane", "doraemon", "happy"];
+
 export const GifApp = () => {
-  const [categorias, setCategorias] = useState([
-    "songoku",
-    "arcane",
-    "doraemon",
-    "happy",
-  ]);
+  const [categoriaEnPantalla, setCategoriaEnPantalla] = useState(
+    fakeCategorias[0]
+  );
+  const [categorias, setCategorias] = useState(fakeCategorias);
 
   const onAddCategory = (newCategory) => {
     if (categorias.includes(newCategory)) {
