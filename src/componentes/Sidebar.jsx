@@ -8,13 +8,14 @@ export const SideBar = ({ categorias }) => {
 
   return (
     <ul className="root-sidebar">
-      {categorias.map((categoria) => (
+      {categorias.map((categoria, indice) => (
         <a
+          key={indice}
           className="root-sidebar__category"
           href={`#cat-${categoria}`}
           onMouseEnter={handleMouseEnter}
         >
-          <li className="root-sidebar__item">
+          <li key="indice" className="root-sidebar__item">
             {/* <span className="root-sidebar__item-text">{categoria}</span> */}
           </li>
         </a>

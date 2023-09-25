@@ -45,7 +45,7 @@ export const GifGrid = ({ category }) => {
           <ol className="card-grid gifgrid-container__preview">
             {images.map((img, indice) => {
               return (
-                <GifGridItem key={img.id} {...img} indice={indice} /> //esparcir propiedades
+                <GifGridItem key={indice} {...img} indice={indice} /> //esparcir propiedades
                 // <GifGridItem
                 //   key={img.title}
                 //   title={img.title}
