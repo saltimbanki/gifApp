@@ -4,6 +4,9 @@
   margin: 0px;
   padding: 0px;
   color: #262626;
+  user-select: none;
+  -webkit-user-select: none;
+
 }
 
 #root {
