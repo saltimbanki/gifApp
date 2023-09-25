@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const GifGrid = ({ category }) => {
   const { images, isLoading } = useFetchGifs(category);
-  console.log(isLoading);
+  // console.log(isLoading);
   const [play, setPlay] = useState(false);
 
   const height = play ? "10vh" : "100vh";

@@ -11,8 +11,11 @@ export const useFetchGifs = (category) => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const getImages = async () => {
-    const newImages = await getGifs(category);
+    let newImages = await getGifs(category);
     console.log(newImages);
+    if (newImages.length == 0) {
+      newImages = await getGifs("not found");
+    }
     setImages(newImages);
     setIsLoading(false);
     scrollToTop();
