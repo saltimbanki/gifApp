@@ -1,15 +1,9 @@
+import { scrollTo } from "../helpers/scrollTo";
+
 export const SideBar = ({ categorias }) => {
   const handleMouseEnter = ({ currentTarget }) => {
     const targetId = currentTarget.getAttribute("href");
-
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      document.querySelector(".root-content").scrollTo({
-        top: targetSection.offsetTop,
-        behavior: "smooth",
-      });
-    }
+    scrollTo(targetId);
   };
 
   return (
