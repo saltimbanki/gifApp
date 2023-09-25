@@ -21,21 +21,21 @@ export const GifGrid = ({ category }) => {
         >
           <motion.div
             layout
-            initial={{ y: -50, marginTop: "-100px" }}
+            initial={{ y: -50, marginTop: "-100px", opacity: 0.7 }}
             whileInView={{ y: 0, opacity: 1, marginTop: "0px" }}
             transition={{ duration: 0.5 }}
           >
             {category}
           </motion.div>
 
-          <motion.button
+          {/* <motion.button
             className="button-play"
             onClick={() => {
               setPlay(!play);
             }}
           >
             Play
-          </motion.button>
+          </motion.button> */}
         </motion.h1>
 
         {isLoading && <h2>Cargandillo.....</h2>}

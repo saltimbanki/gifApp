@@ -63,7 +63,11 @@
 
 .gifgrid-container__preview {
   background-color: black;
-  transform: perspective(336px) translateZ(-20px) rotatey(-35deg) rotatex(14deg) scale(0.9)
+  transform: perspective(336px) translateZ(-20px) rotatey(-35deg) rotatex(14deg) scale(0.9);
+  transition: all ease-in-out .5s;
+}
+.gifgrid-container__preview:hover{
+  transform: rotatey(0deg);
 }
 
 h1 {
@@ -137,12 +141,13 @@ h3 {
   outline: 0;
   font-size: 1.3rem;
   color: #262626;
-  padding: 7px 8px;
+  /* padding: 7px 8px; */
   background: transparent;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
 }
-.form__field::placeholder {
-  /* color: transparent; */
+.form__field:focus::placeholder {
+  color: transparent;
+  transition: color .5s ease-in-out;
 }
 .form__field:placeholder-shown ~ .form__label {
   font-size: 1.3rem;
@@ -161,9 +166,9 @@ h3 {
 
 .form__field:focus {
   padding-bottom: 6px;
-  font-weight: 700;
+  font-weight: 300;
   border-width: 3px;
-  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  /* border-image: linear-gradient(to right, #11998e, #38ef7d); */
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
