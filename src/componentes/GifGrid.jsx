@@ -1,19 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { GifGridItem } from "./GifGridItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, onChangeCategoriaActiva }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: "all" });
   const { images, isLoading } = useFetchGifs(category);
   // console.log(isLoading);
   const [play, setPlay] = useState(false);
 
   const height = play ? "10vh" : "100vh";
 
+  useEffect(() => {
+    if (isInView) {
+      console.log(`hola ${category}`);
+      onChangeCategoriaActiva(category);
+    }
+  }),
+    [isInView];
   return (
     <>
-      <div className="gifgrid-container" id={`cat-${category}`}>
+      <div ref={ref} className="gifgrid-container" id={`cat-${category}`}>
         <motion.h1
           layout
           animate={{ height: height }}

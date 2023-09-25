@@ -12,6 +12,10 @@ export const GifApp = () => {
     fakeCategorias[0]
   );
   const [categorias, setCategorias] = useState(fakeCategorias);
+  const onChangeCategoriaActiva = (categoria) => {
+    setCategoriaEnPantalla(categoria);
+    console.log("categoria en pantalla ", categoriaEnPantalla);
+  };
 
   const onAddCategory = (newCategory) => {
     if (categorias.includes(newCategory)) {
@@ -34,11 +38,20 @@ export const GifApp = () => {
 
       <ol className="root-content">
         {categorias.map((categoria) => {
-          return <GifGrid key={categoria} category={categoria} />;
+          return (
+            <GifGrid
+              key={categoria}
+              category={categoria}
+              onChangeCategoriaActiva={onChangeCategoriaActiva}
+            />
+          );
         })}
       </ol>
 
-      <SideBar categorias={categorias} />
+      <SideBar
+        categorias={categorias}
+        categoriaEnPantalla={categoriaEnPantalla}
+      />
     </>
   );
 };
